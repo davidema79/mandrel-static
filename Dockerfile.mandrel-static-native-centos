@@ -17,7 +17,6 @@ RUN set -eux \
       && dnf install -y 'dnf-command(config-manager)' \
       && dnf config-manager --enable PowerTools \
       && dnf install -y gcc glibc-devel zlib-devel zlib-static libffi-devel glibc-static libstdc++-static $TOOLS_LIST \
-#      && dnf install -y glibc-devel zlib-devel libffi-devel glibc-static gcc-c++ gcc libstdc++-devel libstdc++-static $TOOLS_LIST \
       && wget --quiet -O /tmp/$MANDREL_ARCH_FILENAME $MANDREL_PKG \
       && tar x -z -C /opt -f /tmp/$MANDREL_ARCH_FILENAME \
       && ln -s /opt/$MANDREL_OPT_DIR/ /opt/mandrel \
